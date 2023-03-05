@@ -1,0 +1,17 @@
+<div class="container">
+    <form id="form-update-fact" data-factid="{{ .Fact.ID }}">
+        <label for="question">
+            <span>Question</span>
+            <!-- Add a value for Question field -->
+            <input type="text" name="question" value="{{ .Fact.Question }}">
+        </label>
+
+        <label for="answer">
+            <span>Answer</span>
+            <!-- Add Value for Answer field -->
+            <input type="text" name="answer" value="{{ .Fact.Answer }}">
+        </label>
+
+        <input type="submit" value="Update">
+    </form>
+</div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <title>Trivia Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style/main.css">
+</head>
+<body>
+    <div class="wrapper">
+        {{ template "header" .}} <!-- import partial -->
+
+        <h1>{{ .Title }}</h1>
+        <h2>
+            {{ .Subtitle }}
+        </h2>
+        {{embed}}
+    </div>
+</body>
+</html>
+
+<!-- Import javascript file -->
+<script id="main" src="/javascript/app.js"></script>
+
+<!-- For local development only: Snippet to append timestamps -->
+
+<script>
+    const timeStamp = Date.now()
+    const styleSheetLink = document.querySelector("link#styles")
+    const appScriptLink = document.querySelector("script#main")
+    styleSheetLink.href += `?t=${timeStamp}`
+    appScriptLink.src += `?t=${timeStamp}`
+</script>
